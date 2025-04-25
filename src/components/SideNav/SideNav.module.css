@@ -5,20 +5,24 @@
   color: #838793;
   padding: 28px 16px 12px;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.logoImg {
-  width: 150px;
-  height: 30px;
-}
-
-.svgImg {
-  width: 20px;
-  height: 20px;
+.top {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
 }
 
 .logoSection {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.logoImg {
+  width: 150px;
+  height: 30px;
 }
