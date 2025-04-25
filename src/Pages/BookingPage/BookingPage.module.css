@@ -1,21 +1,22 @@
 .booking {
   padding: 28px 16px;
-}
-
-.header {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.titleContainer {
-  display: flex;
-  align-items: center;
+  flex-direction: column;
   gap: 16px;
 }
 
-.title {
-  font-size: 24px;
-  font-weight: 500;
-  color: #f5f5f5;
+.pageContent {
+  background: #181819;
+  padding: 20px 16px;
+}
+
+.dropButton {
+  color: #9f9f9f;
+  width: 154px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 8px;
+  border: 1px solid #444;
+  padding: 10px 12px;
 }
