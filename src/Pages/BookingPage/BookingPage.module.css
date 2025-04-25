@@ -8,15 +8,25 @@
 .pageContent {
   background: #181819;
   padding: 20px 16px;
+  border-radius: 12px;
 }
 
-.dropButton {
-  color: #9f9f9f;
-  width: 154px;
+.filters {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  border-radius: 8px;
-  border: 1px solid #444;
-  padding: 10px 12px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.applyButton {
+  padding: 10px 32px;
+  border: 1px solid #cd1e5f;
+  font-size: 12px;
+  line-height: 18px;
+  height: 40px;
+  color: #9f9f9f;
+}
+
+.filterButton {
+  padding: 10px 16px;
 }

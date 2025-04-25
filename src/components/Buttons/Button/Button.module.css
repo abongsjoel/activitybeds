@@ -1,0 +1,12 @@
+.button {
+  background: #181819;
+  border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btnPrimary {
+  background: #cd1e5f;
+}
