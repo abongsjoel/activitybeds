@@ -1,4 +1,4 @@
-import Booking from "./components/BookingPage";
+import Booking from "./Pages/BookingPage";
 import Route from "./components/Route";
 import SideNav from "./components/SideNav";
 
@@ -6,7 +6,7 @@ import { app, main } from "./App.module.css";
 
 function App() {
   return (
-    <div className={app}>
+    <section className={app}>
       <SideNav />
       <main className={main}>
         <Route path="/">
@@ -16,7 +16,7 @@ function App() {
           <Booking />
         </Route>
       </main>
-    </div>
+    </section>
   );
 }
 
