@@ -1,0 +1,24 @@
+.sideNav {
+  width: 242px;
+  height: 100vh;
+  background: #181819;
+  color: #838793;
+  padding: 28px 16px 12px;
+  box-sizing: border-box;
+}
+
+.logoImg {
+  width: 150px;
+  height: 30px;
+}
+
+.svgImg {
+  width: 20px;
+  height: 20px;
+}
+
+.logoSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
