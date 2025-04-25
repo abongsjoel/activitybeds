@@ -13,3 +13,9 @@
   align-items: center;
   gap: 8px;
 }
+
+.active {
+  background: #ba1654;
+  border-radius: 8px;
+  color: #f5f5f5;
+}
