@@ -1,10 +1,19 @@
 import { Fragment } from "react";
 
+import Icon from "../Icon";
+
+import rightIcon from "../../assets/svg/chevron-right.svg";
+import leftIcon from "../../assets/svg/chevron-left.svg";
+
 import {
   table,
   pageWrapper,
   contentWrapper,
   tableScroll,
+  tableFooter,
+  displayNumber,
+  tableNav,
+  activePage,
 } from "./Table.module.css";
 
 export default function Table({ data, config, keyFn }) {
@@ -47,7 +56,16 @@ export default function Table({ data, config, keyFn }) {
           </table>
         </div>
       </div>
-      <div>15</div>
+      <div className={tableFooter}>
+        <div>
+          <span className={displayNumber}>15</span> out of {data.length} results
+        </div>
+        <div className={tableNav}>
+          <Icon src={leftIcon} alt="Left Icon" />
+          <button className={activePage}>1</button> 2 3
+          <Icon src={rightIcon} alt="Right Icon" />
+        </div>
+      </div>
     </div>
   );
 }
