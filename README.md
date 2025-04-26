@@ -2,7 +2,7 @@
 
 This project is a single-page booking application, developed as part of an Upwork project application. It demonstrates the use of modern web development tools and practices, including React and Vite, to create a responsive and efficient user interface.
 
-![screenshot](../main/Screenshots.png)
+![screenshot](../main/screenshot.png)
 
 ## Built With
 
