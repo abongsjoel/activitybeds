@@ -1,0 +1,29 @@
+.buttonContainer {
+  display: flex;
+  color: #fff;
+  gap: 2px;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 16px;
+  padding: 4px 8px;
+}
+
+.confirmedStyle {
+  border-color: #57ff8c;
+  background: #0faa40;
+}
+
+.cancelledStyle {
+  border-color: #ff4242;
+  background: #a80606;
+}
+
+.voucheredStyle {
+  border-color: #b3f2ff;
+  background: #34bed9;
+}
+
+.travelledStyle {
+  border-color: #2e79fa;
+  background: #0b2958;
+}

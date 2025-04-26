@@ -56,13 +56,14 @@
 
 .table th {
   background: #28282a;
+  height: 54px;
+}
+
+.table td {
+  height: 60px;
+  color: #9f9f9f;
 }
 
 .table tr:last-child td {
   border-bottom: none;
-}
-
-.table th,
-.table td {
-  width: 71px;
 }

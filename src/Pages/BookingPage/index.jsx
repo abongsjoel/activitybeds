@@ -6,6 +6,9 @@ import Table from "../../components/Table";
 
 import bookIcon from "../../assets/svg/book.svg";
 import filterIcon from "../../assets/svg/filter.svg";
+import nonApi from "../../assets/svg/non_api.svg";
+import boatIcon from "../../assets/svg/sailing-boat.svg";
+import carIcon from "../../assets/svg/car.svg";
 
 import {
   booking,
@@ -13,32 +16,89 @@ import {
   filters,
   applyButton,
   filterButton,
+  bookingStatus,
+  statusA,
+  statusM,
+  colgroupContainer,
+  source,
+  bookingId,
+  paxName,
+  bookingType,
 } from "./BookingPage.module.css";
+import StatusButton from "../../components/Buttons/StatusButton";
 
 export default function Booking() {
   const data = [
     {
       status: "M",
-      argent: "ABC Pvt. Ltd",
+      agent: {
+        title: "ABC Pvt. Ltd",
+        subTitle: "Acc. Manager - Dristi Yadav",
+      },
       source: "API",
       id: "AB_US_001",
       date: "03-02-2025",
       travel_date: "03-02-2025",
-      pax_name: "Rahul Sharma",
-      type: "ship",
+      pax_name: {
+        name: "Rahul Sharma",
+        more: "2A, 2C [4yrs, 8yrs",
+      },
+      type: "boat",
       book_status: "Confirmed",
       city: "Melbourne",
     },
     {
       status: "A",
-      argent: "ABC Pvt. Ltd",
-      source: "API",
+      agent: {
+        title: "ABC Pvt. Ltd",
+        subTitle: "Acc. Manager - Dristi Yadav",
+      },
+      source: "Not API",
       id: "AB_US_002",
       date: "03-02-2025",
       travel_date: "03-02-2025",
-      pax_name: "Rahul Sharma",
-      type: "ship",
+      pax_name: {
+        name: "Rahul Sharma",
+        more: "2A, 2C [4yrs, 8yrs",
+      },
+      type: "car",
       book_status: "Cancelled",
+      city: "Melbourne",
+    },
+    {
+      status: "A",
+      agent: {
+        title: "ABC Pvt. Ltd",
+        subTitle: "Acc. Manager - Dristi Yadav",
+      },
+      source: "Not API",
+      id: "AB_US_002",
+      date: "03-02-2025",
+      travel_date: "03-02-2025",
+      pax_name: {
+        name: "Rahul Sharma",
+        more: "2A, 2C [4yrs, 8yrs",
+      },
+      type: "car",
+      book_status: "Vouchered",
+      city: "Melbourne",
+    },
+    {
+      status: "A",
+      agent: {
+        title: "ABC Pvt. Ltd",
+        subTitle: "Acc. Manager - Dristi Yadav",
+      },
+      source: "Not API",
+      id: "AB_US_002",
+      date: "03-02-2025",
+      travel_date: "03-02-2025",
+      pax_name: {
+        name: "Rahul Sharma",
+        more: "2A, 2C [4yrs, 8yrs",
+      },
+      type: "car",
+      book_status: "Travelled",
       city: "Melbourne",
     },
   ];
@@ -46,22 +106,40 @@ export default function Booking() {
   const config = [
     {
       label: "Booking Status",
-      render: (booking) => booking.status,
+      render: (booking) => (
+        <span
+          className={`${bookingStatus} ${
+            booking.status === "A" ? statusA : statusM
+          }`}
+        >
+          {booking.status}
+        </span>
+      ),
       size: "71px",
     },
     {
-      label: "Argent",
-      render: (booking) => <div>{booking.argent}</div>,
+      label: "Agent",
+      render: (booking) => (
+        <div className={colgroupContainer}>
+          <span>{booking.agent.title}</span>
+          <span>{booking.agent.subTitle}</span>
+        </div>
+      ),
       size: "200px",
     },
     {
       label: "Booking Source",
-      render: (booking) => booking.source,
+      render: (booking) =>
+        booking.source === "API" ? (
+          <span className={source}>API</span>
+        ) : (
+          <Icon src={nonApi} />
+        ),
       size: "71px",
     },
     {
       label: "Booking ID",
-      render: (booking) => booking.id,
+      render: (booking) => <span className={bookingId}>{booking.id}</span>,
       size: "88px",
     },
     {
@@ -76,17 +154,29 @@ export default function Booking() {
     },
     {
       label: "Lead Pax Name",
-      render: (booking) => booking.pax_name,
+      render: (booking) => (
+        <div className={`${colgroupContainer} ${paxName}`}>
+          <div>{booking.pax_name.name}</div>
+          <div>{booking.pax_name.more}</div>
+        </div>
+      ),
       size: "133px",
     },
     {
       label: "Product Type",
-      render: (booking) => booking.type,
+      render: (booking) => (
+        <div className={bookingType}>
+          <Icon
+            src={booking.type === "boat" ? boatIcon : carIcon}
+            alt={booking.type}
+          />
+        </div>
+      ),
       size: "101px",
     },
     {
-      label: " Status",
-      render: (booking) => booking.book_status,
+      label: "Status",
+      render: (booking) => <StatusButton label={booking.book_status} />,
       size: "123px",
     },
     {

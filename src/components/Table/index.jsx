@@ -9,7 +9,6 @@ import {
 
 export default function Table({ data, config, keyFn }) {
   const renderdHeaders = config.map((column) => {
-    console.log({ column });
     if (column.header) {
       return <Fragment key={column.label}>{column.header()}</Fragment>;
     }
@@ -35,7 +34,10 @@ export default function Table({ data, config, keyFn }) {
           <table className={table}>
             <colgroup>
               {config.map((con) => (
-                <col style={{ width: con.size ?? "100px" }} />
+                <col
+                  key={con.label}
+                  style={{ width: con.size ?? "100px", textAlign: "center" }}
+                />
               ))}
             </colgroup>
             <thead>
