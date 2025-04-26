@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useEffect, useState } from "react";
 
 import Icon from "../Icon";
 
@@ -16,7 +16,17 @@ import {
   activePage,
 } from "./Table.module.css";
 
+const DISPLAY_NUMBER = 15;
+
 export default function Table({ data, config, keyFn }) {
+  const [renderedData, setRenderedData] = useState([]);
+  const [activePageNum, setActivePageNum] = useState(1);
+  const [navDisplay, setNavDisplay] = useState(0);
+
+  const pages = Math.ceil(data.length / DISPLAY_NUMBER);
+  const start = activePageNum * DISPLAY_NUMBER - (DISPLAY_NUMBER - 1);
+  const end = activePageNum * DISPLAY_NUMBER;
+
   const renderdHeaders = config.map((column) => {
     if (column.header) {
       return <Fragment key={column.label}>{column.header()}</Fragment>;
@@ -25,7 +35,7 @@ export default function Table({ data, config, keyFn }) {
     return <th key={column.label}>{column.label}</th>;
   });
 
-  const renderedRows = data.map((rowData) => {
+  const renderedRows = renderedData.map((rowData) => {
     const renderedCells = config.map((column) => {
       return <td key={column.label}>{column.render(rowData)}</td>;
     });
@@ -35,6 +45,27 @@ export default function Table({ data, config, keyFn }) {
       </tr>
     );
   });
+
+  const handleChangePage = (newPageNum) => {
+    setActivePageNum(newPageNum);
+    const base = (newPageNum - 1) * DISPLAY_NUMBER;
+    setRenderedData(data.slice(base, base + DISPLAY_NUMBER));
+  };
+
+  const handleNavDisplay = (action) => {
+    if (action === "increment") {
+      setNavDisplay((prev) => (prev < pages - 3 ? prev + 1 : prev));
+    }
+    if (action === "decrement") {
+      setNavDisplay((prev) => (prev > 0 ? prev - 1 : prev));
+    }
+  };
+
+  useEffect(() => {
+    setRenderedData(data.slice(0, 15));
+    setActivePageNum(1);
+    setNavDisplay(0);
+  }, [data]);
 
   return (
     <div className={pageWrapper}>
@@ -58,12 +89,29 @@ export default function Table({ data, config, keyFn }) {
       </div>
       <div className={tableFooter}>
         <div>
-          <span className={displayNumber}>15</span> out of {data.length} results
+          <span className={displayNumber}>
+            {start} -{end > data.length ? data.length : end}
+          </span>{" "}
+          of {data.length} results
         </div>
         <div className={tableNav}>
-          <Icon src={leftIcon} alt="Left Icon" />
-          <button className={activePage}>1</button> 2 3
-          <Icon src={rightIcon} alt="Right Icon" />
+          <button onClick={() => handleNavDisplay("decrement")}>
+            <Icon src={leftIcon} alt="Left Icon" />
+          </button>
+          {Array.from({ length: pages }, (_, i) => i + 1)
+            .splice(navDisplay, navDisplay + 3)
+            .map((num) => (
+              <button
+                onClick={() => handleChangePage(num)}
+                key={num}
+                className={num === activePageNum ? activePage : ""}
+              >
+                {num}
+              </button>
+            ))}
+          <button onClick={() => handleNavDisplay("increment")}>
+            <Icon src={rightIcon} alt="Right Icon" />
+          </button>
         </div>
       </div>
     </div>
