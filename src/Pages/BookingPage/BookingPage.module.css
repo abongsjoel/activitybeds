@@ -16,6 +16,7 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 16px;
+  padding-bottom: 24px;
 }
 
 .applyButton {

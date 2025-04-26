@@ -7,4 +7,7 @@
   flex: 1;
   height: 100vh;
   background: #28282a;
+  display: inline;
+  flex-shrink: 1;
+  min-width: 0;
 }
