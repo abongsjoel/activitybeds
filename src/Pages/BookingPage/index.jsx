@@ -26,83 +26,9 @@ import {
   bookingType,
 } from "./BookingPage.module.css";
 import StatusButton from "../../components/Buttons/StatusButton";
+import { data } from "../../constants";
 
 export default function Booking() {
-  const data = [
-    {
-      status: "M",
-      agent: {
-        title: "ABC Pvt. Ltd",
-        subTitle: "Acc. Manager - Dristi Yadav",
-      },
-      source: "API",
-      id: "AB_US_001",
-      date: "03-02-2025",
-      travel_date: "03-02-2025",
-      pax_name: {
-        name: "Rahul Sharma",
-        more: "2A, 2C [4yrs, 8yrs",
-      },
-      type: "boat",
-      book_status: "Confirmed",
-      city: "Melbourne",
-    },
-    {
-      status: "A",
-      agent: {
-        title: "ABC Pvt. Ltd",
-        subTitle: "Acc. Manager - Dristi Yadav",
-      },
-      source: "Not API",
-      id: "AB_US_002",
-      date: "03-02-2025",
-      travel_date: "03-02-2025",
-      pax_name: {
-        name: "Rahul Sharma",
-        more: "2A, 2C [4yrs, 8yrs",
-      },
-      type: "car",
-      book_status: "Cancelled",
-      city: "Melbourne",
-    },
-    {
-      status: "A",
-      agent: {
-        title: "ABC Pvt. Ltd",
-        subTitle: "Acc. Manager - Dristi Yadav",
-      },
-      source: "Not API",
-      id: "AB_US_002",
-      date: "03-02-2025",
-      travel_date: "03-02-2025",
-      pax_name: {
-        name: "Rahul Sharma",
-        more: "2A, 2C [4yrs, 8yrs",
-      },
-      type: "car",
-      book_status: "Vouchered",
-      city: "Melbourne",
-    },
-    {
-      status: "A",
-      agent: {
-        title: "ABC Pvt. Ltd",
-        subTitle: "Acc. Manager - Dristi Yadav",
-      },
-      source: "Not API",
-      id: "AB_US_002",
-      date: "03-02-2025",
-      travel_date: "03-02-2025",
-      pax_name: {
-        name: "Rahul Sharma",
-        more: "2A, 2C [4yrs, 8yrs",
-      },
-      type: "car",
-      book_status: "Travelled",
-      city: "Melbourne",
-    },
-  ];
-
   const config = [
     {
       label: "Booking Status",
