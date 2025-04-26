@@ -47,38 +47,52 @@ export default function Booking() {
     {
       label: "Booking Status",
       render: (booking) => booking.status,
+      size: "71px",
     },
     {
       label: "Argent",
       render: (booking) => <div>{booking.argent}</div>,
+      size: "200px",
     },
     {
       label: "Booking Source",
       render: (booking) => booking.source,
+      size: "71px",
     },
     {
       label: "Booking ID",
       render: (booking) => booking.id,
+      size: "88px",
     },
     {
       label: "Booking Date",
       render: (booking) => booking.date,
+      size: "101px",
     },
     {
       label: "Travel Date",
       render: (booking) => booking.travel_date,
+      size: "101px",
+    },
+    {
+      label: "Lead Pax Name",
+      render: (booking) => booking.pax_name,
+      size: "133px",
     },
     {
       label: "Product Type",
       render: (booking) => booking.type,
+      size: "101px",
     },
     {
       label: " Status",
       render: (booking) => booking.book_status,
+      size: "123px",
     },
     {
       label: "Product city",
       render: (booking) => booking.city,
+      size: "96px",
     },
   ];
 

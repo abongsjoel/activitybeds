@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import { NavigationProvider } from "./context/Navigation";
 import App from "./App.jsx";
 
+import "./reset.css";
 import "./index.css";
 
 createRoot(document.getElementById("root")).render(
