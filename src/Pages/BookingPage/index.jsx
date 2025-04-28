@@ -3,6 +3,8 @@ import DropButton from "../../components/Buttons/DropButton";
 import Button from "../../components/Buttons/Button";
 import Icon from "../../components/Icon";
 import Table from "../../components/Table";
+import StatusButton from "../../components/Buttons/StatusButton";
+import { data } from "../../constants";
 
 import bookIcon from "../../assets/svg/book.svg";
 import filterIcon from "../../assets/svg/filter.svg";
@@ -25,8 +27,6 @@ import {
   paxName,
   bookingType,
 } from "./BookingPage.module.css";
-import StatusButton from "../../components/Buttons/StatusButton";
-import { data } from "../../constants";
 
 export default function Booking() {
   const config = [
