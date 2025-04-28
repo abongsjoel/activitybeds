@@ -37,7 +37,6 @@ Give a ⭐️ if you like this project!
 
 - **React**: A powerful library for building user interfaces.
 - **Vite**: A fast build tool and development server.
-- **HMR**: Instant updates during development.
 - **ESLint**: Enforces code quality and consistency.
 
 ## Plugins Used
@@ -46,15 +45,6 @@ This project uses the following official Vite plugins:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md): Utilizes [Babel](https://babeljs.io/) for Fast Refresh.
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc): Utilizes [SWC](https://swc.rs/) for Fast Refresh.
-
-## Expanding the ESLint Configuration
-
-For production-grade applications, we recommend:
-
-- Using **TypeScript** for type safety.
-- Enabling type-aware lint rules with [`typescript-eslint`](https://typescript-eslint.io).
-
-To get started with TypeScript, refer to the [React + TypeScript template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts).
 
 ## Getting Started
 
