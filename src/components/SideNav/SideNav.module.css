@@ -1,5 +1,4 @@
 .sideNav {
-  width: 242px;
   height: 100vh;
   background: #181819;
   color: #838793;
@@ -41,4 +40,9 @@
   font-size: 14px;
   font-weight: 500;
   line-height: 20px;
+}
+
+.sideNav.collapsed {
+  padding: 8px;
+  margin: auto;
 }

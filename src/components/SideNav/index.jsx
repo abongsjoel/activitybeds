@@ -1,7 +1,6 @@
 import Icon from "../Icon";
 import Menu from "../Menu";
 import Divider from "../Divider";
-import NavItem from "../NavItem";
 
 import logo from "../../assets/svg/logo.svg";
 import leftArrow from "../../assets/svg/fi_chevrons-left.svg";
@@ -15,20 +14,25 @@ import {
   logout,
 } from "./SideNav.module.css";
 
-export default function SideNav() {
+export default function SideNav({ isExpanded, toggleExpan, sideBarStyles }) {
   return (
-    <nav className={sideNav}>
+    <nav className={`${sideNav} ${sideBarStyles}`}>
       <section className={top}>
         <div className={logoSection}>
-          <Icon src={logo} alt="activebeds" className={logoImg} />
-          <Icon src={leftArrow} alt="arrow-left" />
+          {isExpanded && (
+            <Icon src={logo} alt="activebeds" className={logoImg} />
+          )}
+
+          <button onClick={toggleExpan}>
+            <Icon src={leftArrow} alt="arrow-left" />
+          </button>
         </div>
-        <Menu />
+        {isExpanded && <Menu />}
       </section>
       <section>
         <Divider />
         <div className={logout}>
-          <span>Log Out</span>
+          {isExpanded && <span>Log Out</span>}
           <Icon src={login} alt="Login Icon" />
         </div>
       </section>

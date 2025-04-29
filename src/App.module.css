@@ -10,5 +10,26 @@
   display: inline;
   flex-shrink: 1;
   min-width: 0;
+}
+
+.mainExpanded {
   margin-left: 242px;
+  transition: width 0.3s ease;
+}
+
+.mainCollapsed {
+  margin-left: 42px;
+  transition: width 0.9s ease;
+}
+
+.expanded {
+  width: 242px;
+  transition: width 0.3s ease;
+}
+
+.collapsed {
+  width: 42px;
+  transition: width 0.3s ease;
+  padding: 28px 8px;
+  margin: auto;
 }
