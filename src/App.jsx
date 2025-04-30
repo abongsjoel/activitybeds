@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+
 import Booking from "./Pages/BookingPage";
 import Route from "./components/Route";
 import SideNav from "./components/SideNav";
+import { selectSidebarExpanded, toggleSideBar } from "./redux/sidebarSlice";
 
 import {
   app,
@@ -13,7 +15,9 @@ import {
 } from "./App.module.css";
 
 function App() {
-  const [isExpanded, setIsExpanded] = useState(true);
+  const dispatch = useDispatch();
+
+  const isExpanded = useSelector(selectSidebarExpanded);
 
   let sideBarStyles = expanded;
   let mainStyles = mainExpanded;
@@ -24,7 +28,7 @@ function App() {
   }
 
   const handleSideBarView = () => {
-    setIsExpanded((prevView) => !prevView);
+    dispatch(toggleSideBar());
   };
 
   return (
