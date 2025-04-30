@@ -14,8 +14,10 @@ import {
   collapsed,
 } from "./NavItem.module.css";
 
-export default function NavItem({ title, route, icon, dropDown, isActive }) {
-  const { navigate } = useContext(NavigationContext);
+export default function NavItem({ title, route, icon, dropDown }) {
+  const { navigate, currentPath } = useContext(NavigationContext);
+
+  const isActive = route === currentPath;
 
   const isExpanded = useSelector(selectSidebarExpanded);
 

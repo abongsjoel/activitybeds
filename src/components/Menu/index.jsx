@@ -21,7 +21,6 @@ const MAIN_MENU = [
     title: "Booking",
     route: "/booking",
     icon: bookIcon,
-    isActive: true,
   },
   {
     title: "Agent",
