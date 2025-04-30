@@ -5,6 +5,7 @@ import NavigationContext from "../../context/Navigation";
 import Icon from "../Icon";
 import { selectSidebarExpanded } from "../../redux/sidebarSlice";
 import downArrow from "../../assets/svg/fi_chevron-down.svg";
+import Link from "../Link/LInk";
 
 import {
   navContainer,
@@ -15,7 +16,7 @@ import {
 } from "./NavItem.module.css";
 
 export default function NavItem({ title, route, icon, dropDown }) {
-  const { navigate, currentPath } = useContext(NavigationContext);
+  const { currentPath } = useContext(NavigationContext);
 
   const isActive = route === currentPath;
 
@@ -24,16 +25,12 @@ export default function NavItem({ title, route, icon, dropDown }) {
   const activeStyles = isActive ? active : "";
   const barToggleStyles = isExpanded ? expanded : collapsed;
 
-  const handleNavigation = (path) => {
-    navigate(path);
-  };
-
   return (
     <li className={`${navContainer} ${activeStyles} ${barToggleStyles}`}>
-      <button className={navItem} onClick={() => handleNavigation(route)}>
+      <Link className={navItem} to={route}>
         <Icon src={icon} alt={title} />
         {isExpanded && <span>{title}</span>}
-      </button>
+      </Link>
       {dropDown && isExpanded && <Icon src={downArrow} alt="arrow-down" />}
     </li>
   );
