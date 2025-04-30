@@ -27,7 +27,7 @@ export default function SideNav({ isExpanded, toggleExpan, sideBarStyles }) {
             <Icon src={leftArrow} alt="arrow-left" />
           </button>
         </div>
-        {isExpanded && <Menu />}
+        <Menu />
       </section>
       <section>
         <Divider />
