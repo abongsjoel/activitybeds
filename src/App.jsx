@@ -13,6 +13,7 @@ import {
   mainExpanded,
   mainCollapsed,
 } from "./App.module.css";
+import EmptyPage from "./Pages/EmptyPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -40,10 +41,28 @@ function App() {
       />
       <main className={`${main} ${mainStyles}`}>
         <Route path="/">
-          <Booking />
+          <EmptyPage title="HomePage" />
         </Route>
         <Route path="/booking">
           <Booking />
+        </Route>
+        <Route path="/management">
+          <EmptyPage title="User Management" />
+        </Route>
+        <Route path="/agent">
+          <EmptyPage title="Agent" />
+        </Route>
+        <Route path="/supplier">
+          <EmptyPage title="Supplier" />
+        </Route>
+        <Route path="/product">
+          <EmptyPage title="Product" />
+        </Route>
+        <Route path="/settings">
+          <EmptyPage title="Settings" />
+        </Route>
+        <Route path="/help">
+          <EmptyPage title="Help" />
         </Route>
       </main>
     </section>

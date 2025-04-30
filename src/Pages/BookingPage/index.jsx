@@ -4,6 +4,7 @@ import Icon from "../../components/Icon";
 import Table from "../../components/Table";
 import StatusButton from "../../components/Buttons/StatusButton";
 import { data } from "../../constants";
+import Page from "../../components/Page";
 
 import bookIcon from "../../assets/svg/book.svg";
 import filterIcon from "../../assets/svg/filter.svg";
@@ -24,7 +25,6 @@ import {
   paxName,
   bookingType,
 } from "./BookingPage.module.css";
-import Page from "../../components/Page";
 
 export default function Booking() {
   const config = [
