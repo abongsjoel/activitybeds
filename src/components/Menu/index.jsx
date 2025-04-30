@@ -13,24 +13,29 @@ import { menu } from "./Menu.module.css";
 const MAIN_MENU = [
   {
     title: "User Management",
+    route: "/management",
     icon: userIcon,
     dropDown: true,
   },
   {
     title: "Booking",
+    route: "/booking",
     icon: bookIcon,
     isActive: true,
   },
   {
     title: "Agent",
+    route: "/agent",
     icon: userCheck,
   },
   {
     title: "Supplier",
+    route: "/supplier",
     icon: box,
   },
   {
     title: "Product",
+    route: "/product",
     icon: box,
     dropDown: true,
   },
@@ -39,10 +44,12 @@ const MAIN_MENU = [
 const SEC_MENU = [
   {
     title: "Settings",
+    route: "/settings",
     icon: setting,
   },
   {
     title: "Help",
+    route: "/help",
     icon: helpCircle,
   },
 ];
