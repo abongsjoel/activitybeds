@@ -1,18 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap");
 
-.booking {
-  padding: 28px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.pageContent {
-  background: #181819;
-  padding: 20px 16px;
-  border-radius: 12px;
-}
-
 .filters {
   display: flex;
   align-items: center;
