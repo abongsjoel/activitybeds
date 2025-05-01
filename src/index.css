@@ -14,3 +14,7 @@ body {
   overflow-x: hidden; /* prevent the entire page from scrolling horizontally */
   background: #28282a;
 }
+
+button {
+  cursor: pointer;
+}

@@ -1,10 +1,10 @@
-import PageHeader from "../../components/PageHeader";
 import DropButton from "../../components/Buttons/DropButton";
 import Button from "../../components/Buttons/Button";
 import Icon from "../../components/Icon";
 import Table from "../../components/Table";
 import StatusButton from "../../components/Buttons/StatusButton";
 import { data } from "../../constants";
+import Page from "../../components/Page";
 
 import bookIcon from "../../assets/svg/book.svg";
 import filterIcon from "../../assets/svg/filter.svg";
@@ -13,8 +13,6 @@ import boatIcon from "../../assets/svg/sailing-boat.svg";
 import carIcon from "../../assets/svg/car.svg";
 
 import {
-  booking,
-  pageContent,
   filters,
   applyButton,
   filterButton,
@@ -117,27 +115,24 @@ export default function Booking() {
   };
 
   return (
-    <section className={booking}>
-      <PageHeader pageTitle="Booking" icon={bookIcon} />
-      <main className={pageContent}>
-        <section className={filters}>
-          <DropButton label="Argent..." />
-          <DropButton label="Supplier..." />
-          <DropButton label="Booking ID..." />
-          <DropButton label="Lead Pax Name..." />
-          <DropButton label="Booking Status" />
-          <Button primary className={applyButton}>
-            Apply
-          </Button>
-          <Button className={`${applyButton} ${filterButton}`}>
-            <Icon src={filterIcon} />
-            Filters
-          </Button>
-        </section>
-        <section>
-          <Table data={data} config={config} keyFn={keyFn} />
-        </section>
-      </main>
-    </section>
+    <Page title="Booking" icon={bookIcon}>
+      <section className={filters}>
+        <DropButton label="Argent..." />
+        <DropButton label="Supplier..." />
+        <DropButton label="Booking ID..." />
+        <DropButton label="Lead Pax Name..." />
+        <DropButton label="Booking Status" />
+        <Button primary className={applyButton}>
+          Apply
+        </Button>
+        <Button className={`${applyButton} ${filterButton}`}>
+          <Icon src={filterIcon} />
+          Filters
+        </Button>
+      </section>
+      <section>
+        <Table data={data} config={config} keyFn={keyFn} />
+      </section>
+    </Page>
   );
 }
