@@ -41,7 +41,7 @@ function App() {
       />
       <main className={`${main} ${mainStyles}`}>
         <Route path="/">
-          <EmptyPage title="HomePage" />
+          <Booking />
         </Route>
         <Route path="/booking">
           <Booking />

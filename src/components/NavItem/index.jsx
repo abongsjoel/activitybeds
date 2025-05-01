@@ -18,7 +18,8 @@ import {
 export default function NavItem({ title, route, icon, dropDown }) {
   const { currentPath } = useContext(NavigationContext);
 
-  const isActive = route === currentPath;
+  const isActive =
+    route === currentPath || (currentPath === "/" && route === "/booking");
 
   const isExpanded = useSelector(selectSidebarExpanded);
 
